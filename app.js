@@ -13,12 +13,12 @@ app.controller("MainController", ["$scope", "$http", function($scope, $http, $ro
         $scope.voteCount--;
     }
 
-    $http.get('http://localhost:4000/issues/')
+    $http.get('/issues/')
         // res.send(issues);
         .success(function(response) {
             console.log(response);
             $scope.issues = response;
-            
+
             console.log("it works");
             return $scope.issues;
         })
@@ -35,7 +35,7 @@ app.controller("MainController", ["$scope", "$http", function($scope, $http, $ro
         };
         console.log(issueObj);
 
-        $http.post('http://localhost:4000/issues/', issueObj)
+        $http.post('/issues/', issueObj)
             .success(function(issueObj) {
                 $scope.PostDataResponse = issues;
             })
