@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="IssuesApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Documenzt</title>
+</head>
+
+<body ng-controller="MainController">
+
+        <h1>testing inputs</h1>
+        <input type="text" placeholder="Enter a new issue here" ng-model="issueName">
+        <button type="submit" ng-click="submitIssue() ">Post it</button>
+        <button ng-click="upVote() ">Upvote</button>
+        <button ng-click="downVote() ">Downvote</button>
+        <p>{{issueName}}</p>
+        <p>{{voteCount}}</p>
+    <div ng-repeat="item in issues">
+        <p>{{issues.name}}</p>
+        <p>{{voteCount}}</p>
+        <p>{{userComment}}</p>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
